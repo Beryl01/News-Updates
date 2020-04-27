@@ -1,0 +1,32 @@
+{% macro dispalyNewsList(news_list) %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card bg-danger">
+        {% for new in news_list %}
+        <div style="height: 100vh" class="col-md-4  card-body " style="text-align: center">
+                <div class="card-header" style="font-size: 20px;">{{new.source}}</div>
+            <div class="thumbnails"> <br>
+                <img src="{{ new.urlToImage }}" width="350" height="200"
+                    class="bd-placeholder-img-lg featurette-image img-fluid mx-auto">
+            </div>
+            <div class="card-title">
+                <h2 class="featurette-heading">
+                    {{ new.title | truncate(80)}}
+                </h2>
+                <p class="card-text"> {{ new.description | truncate(200) }} </p>
+                <a href="{{new.url}}" class="btn btn-primary card-link" target="_blank">View full story  &raquo;</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    </div>
+
+
+</div>
+<!-- <hr class="featurette-divider"> -->
+
+
+{% endmacro %}
