@@ -1,0 +1,39 @@
+<style>
+    body {
+        background-image: url("https://bit.ly/2xUuL4s");
+        background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+    }
+</style>
+
+<body>
+
+    {% extends 'base.html' %}
+
+    {% import 'macros.html' as macro %}
+
+
+
+
+    <!-- Content Block-->
+    {% block content %}
+    <div class="container">
+        <h3 class="text-center"> Top Stories </h3>
+        <hr>
+        {{ macro.dispalyNewsList(top) }}
+
+
+    </div>
+    </div>
+
+
+
+
+
+    {% endblock %}
+
+
+</body>
+
+</html>

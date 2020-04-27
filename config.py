@@ -6,9 +6,8 @@ class Config:
     '''
 
     NEWS_API_BASE_URL="https://newsapi.org/v2/{}?country=us&apiKey={}"
-
-    NEWS_API_KEY='8cbc00d0555f48fd877220b74ed1216d'
-
+    NEWS_API_KEY='b283063849aa43109644ce46915578fd'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
     '''
@@ -18,7 +17,6 @@ class ProdConfig(Config):
     '''
     pass
 
-
 class DevConfig(Config):
     '''
     Development configuration child class
@@ -27,7 +25,6 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
-
 
 config_options = {
     'development': DevConfig,
