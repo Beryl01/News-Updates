@@ -6,7 +6,7 @@ from flask_script import Manager, Server
 app = create_app("development")
 
 manager = Manager(app)
-
+FLASK_RUN_PORT=8000
 manager.add_command("server", Server)
 
 if __name__ == "__main__":
