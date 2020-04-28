@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+<!-- Content Block-->
+{% block content %}
+<div class="container">
+    <form>
+        <input type="text" name="news_query" placeholder="Search for news" class="form-control">
+        <input type="submit" value="Submit" class="btn btn-default">
+    </form>
+</div>
+<div class="container">
+    <h1 class="text-center"> JUST FOR YOU </h1>
+    <h3 class="text-center"> THE BEST OF EVERYTHING YOU FOLLOW </h3>
+    <hr>
+    {{ macro.dispalyNewsList(top) }}
+</div>
+{% endblock %}
