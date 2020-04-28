@@ -5,8 +5,9 @@
         {% for new in news_list %}
         <div class="card m-4 text-dark">
             <div class=" text-center card-header">
-              
-                <p>News Source:{{new.source}}</h4>
+                <a href="{{sources_url}}" class="htext" style="color:#232e4a; font-size:18px;">
+                    <p>News Source:{{new.sources_url}}</p></a>
+                
             </div>
             <div class="thumbnails"> <br>
                 <img src="{{ new.urlToImage }}" width="400" height="200"
