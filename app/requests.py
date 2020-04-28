@@ -4,13 +4,14 @@ from .models import News, Sources
 # getting api key
 
 api_key = None
+sources_url = None
 
 # getting the news base url
 
 base_url = None
 
 def configure_request(app):
-    global api_key, base_url
+    global api_key, base_url,sources_url
     api_key = app.config["NEWS_API_KEY"]
     base_url = app.config["NEWS_API_BASE_URL"]
 
@@ -116,3 +117,5 @@ def process_sources(sources_list):
             sources_results.append(sources_object)
 
             return sources_results
+
+       
