@@ -1,5 +1,4 @@
 # News Updates Application
-
 #### By:
 Beryl Negesa Otieno
 
