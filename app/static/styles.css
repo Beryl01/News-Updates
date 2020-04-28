@@ -9,11 +9,15 @@ body {
   }
 
   .navbar-nav .side{
-   margin-inline-end: 100px;
+   margin-left: 500px;
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #042d57;
+  }
+  
+  .site-header{
+    background-color: #042d57;
   }
   
   .site-header .navbar-nav .nav-link {

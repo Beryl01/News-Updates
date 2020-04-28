@@ -1,13 +1,8 @@
 import urllib.request, json
 from .models import News, Sources
 
-# getting api key
-
 api_key = None
 sources_url = None
-
-# getting the news base url
-
 base_url = None
 
 def configure_request(app):
