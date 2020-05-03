@@ -4,7 +4,6 @@
 {% block content %}
 <div class="container-fluid">
     <hr>
-    <!-- general news -->
     <div class="">
         <h1> General news</h1>
         <div class="row">
@@ -12,5 +11,55 @@
         </div>
     </div>
     <hr>
+    <div class="">
+        <!---Business news-->
+        <h1> Business news</h1>
+        <hr>
+        <div class="row">
+            {{ macro.displayNews(Business)}}
+        </div>
+    </div>
+    <hr>
+    <div class="">
+        <!--Entertainment news-->
+        <h1> Entertainment news</h1>
+        <div class="row">
+            {{ macro.displayNews(Entertainment)}}
+        </div>
+    </div>
+    <hr>
+    <div class="">
+        <!---sports news-->
+        <h1> Sports news</h1>
+        <div class="row">
+            {{ macro.displayNews(Sports)}}
+        </div>
+    </div>
+    <hr>
+    <div class="">
+        <!---Technology news--->
+        <h1> Technology news</h1>
+        <div class="row">
+            {{ macro.displayNews(Technology)}}
+        </div>
+    </div>
+    <hr>
+    <div class="">
+        <!--Science news-->
+        <h1> Science news</h1>
+        <div class="row">
+            {{ macro.displayNews(Science)}}
+        </div>
+    </div>
+    <hr>
+    <div class="">
+        <!---Health news--->
+        <h1> Health news</h1>
+        <div class="row">
+            {{ macro.displayNews(Health)}}
+        </div>
+    </div>
+    <hr>
+</div>
    
 {% endblock%}
