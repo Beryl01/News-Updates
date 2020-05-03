@@ -2,64 +2,15 @@
 {% import 'macros.html' as macro%}
 <!-- Content block -->
 {% block content %}
-<div class="container-fluid row">
+<div class="container-fluid">
     <hr>
     <!-- general news -->
-    <details class="list-group-item">
-        <summary> General news</summary>
-        <div class="col-sm-3">
+    <div class="">
+        <h1> General news</h1>
+        <div class="row">
             {{ macro.displayNews(General)}}
         </div>
-    </details>
+    </div>
     <hr>
-    <details class="list-group-item">
-        <!---Business news-->
-        <summary> Business news</summary>
-        <hr>
-        <div class="col-sm-3">
-            {{ macro.displayNews(Business)}}
-        </div>
-    </details>
-    <hr>
-    <details class="list-group-item">
-        <!--Entertainment news-->
-        <summary> Entertainment news</summary>
-        <div class="col-sm-3">
-            {{ macro.displayNews(Entertainment)}}
-        </div>
-    </details>
-    <hr>
-    <details class="list-group-item">
-        <!---sports news-->
-        <summary> Sports news</summary>
-        <div class="col-sm-3">
-            {{ macro.displayNews(Sports)}}
-        </div>
-    </details>
-    <hr>
-    <details class="list-group-item">
-        <!---Technology news--->
-        <summary> Technology news</summary>
-        <div class="col-sm-3">
-            {{ macro.displayNews(Technology)}}
-        </div>
-    </details>
-    <hr>
-    <details class="list-group-item">
-        <!--Science news-->
-        <summary> Science news</summary>
-        <div class="col-sm-3">
-            {{ macro.displayNews(Science)}}
-        </div>
-    </details>
-    <hr>
-    <details class="list-group-item">
-        <!---Health news--->
-        <summary> Health news</summary>
-        <div class="col-sm-3">
-            {{ macro.displayNews(Health)}}
-        </div>
-    </details>
-    <hr>
-</div>
+   
 {% endblock%}
