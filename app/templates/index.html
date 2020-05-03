@@ -1,39 +1,65 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!-- Content block -->
 {% block content %}
-<div class="container-fluid">
-    <br>
-    <div id="jumbo">
-        <div class="jumbotron text-center text-uppercase">
-            <h1> {{name}} </h1>
+<div class="container-fluid row">
+    <hr>
+    <!-- general news -->
+    <details class="list-group-item">
+        <summary> General news</summary>
+        <div class="col-sm-3">
+            {{ macro.displayNews(General)}}
         </div>
-    </div>
-    <div class="row">
-        {% for article in news %}
-        <div class="col-sm-3" style="margin-bottom: 5px">
-            <div class="card elegant-color  text-center">
-                <div class="img-fluid" style="height: 200px">
-                    <a href="{{article.url}}" target="_blank">
-                        <img class="thumbnail img-el img-fluid" src="{{article.urlToImage}}" alt="IMAGE LOADING...">
-                    </a>
-                </div>
-                <div class="card-body">
-                    <div class="card-text text-light text-monospace">
-                        <h4 class="text-bold text-truncate"> {{article.title}} </h4>
-                        <p class="text-truncate">{{article.description}}...</p>
-                        <p class="text-truncate">Posted by: <span
-                                class="text-muted date-author">{{article.author}}</span></p>
-                    </div>
-                    <div class="card-footer">
-                        <p>
-                            <a href={{article.url}} target="_blank"><button type="button"
-                                    class="btn btn-outline-primary "><span class="text-light">Read
-                                        more</span></button></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+    </details>
+    <hr>
+    <details class="list-group-item">
+        <!---Business news-->
+        <summary> Business news</summary>
+        <hr>
+        <div class="col-sm-3">
+            {{ macro.displayNews(Business)}}
         </div>
-        {% endfor %}
-    </div>
+    </details>
+    <hr>
+    <details class="list-group-item">
+        <!--Entertainment news-->
+        <summary> Entertainment news</summary>
+        <div class="col-sm-3">
+            {{ macro.displayNews(Entertainment)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item">
+        <!---sports news-->
+        <summary> Sports news</summary>
+        <div class="col-sm-3">
+            {{ macro.displayNews(Sports)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item">
+        <!---Technology news--->
+        <summary> Technology news</summary>
+        <div class="col-sm-3">
+            {{ macro.displayNews(Technology)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item">
+        <!--Science news-->
+        <summary> Science news</summary>
+        <div class="col-sm-3">
+            {{ macro.displayNews(Science)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item">
+        <!---Health news--->
+        <summary> Health news</summary>
+        <div class="col-sm-3">
+            {{ macro.displayNews(Health)}}
+        </div>
+    </details>
+    <hr>
 </div>
 {% endblock%}
