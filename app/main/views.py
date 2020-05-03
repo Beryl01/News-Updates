@@ -1,45 +1,31 @@
-from flask import render_template, request, redirect, url_for
-from .import main
-from ..requests import get_news, search_news, sources_news
+from flask import render_template
+from . import main
+from ..request import get_sources, get_articles
 
-@main.route("/")
+
+@main.route('/')
 def index():
+    # getting general news
+    general_news = get_sources('general')
+    business_news = get_sources('business')
+    entertainment_news = get_sources('entertainment')
+    sports_news = get_sources('sports')
+    technology_news = get_sources('technology')
+    science_news = get_sources('science')
+    health_news = get_sources('health')
+
+    title = 'Home-Best News Update Site'
+
+    return render_template('index.html', title=title, General=general_news, Business=business_news,
+                           Entertainment=entertainment_news, Sports=sports_news, Technology=technology_news,
+                           Science=science_news, Health=health_news)
+
+
+@main.route('/articles/<source_id>&<int:per_page>')
+def articles(source_id, per_page):
     '''
-    View root page function that returns the index page and its data
+    Function that returns articles based on their sources
     '''
-    top_headlines = get_news("top-headlines")
-
-    title = "News headlines"
-
-    search_news = request.args.get("news_query")
-    search_sources = request.args.get("news_sources")
-    if search_news:
-        return redirect(url_for(".search", news_name=search_news))
-
-    if search_sources:
-        return redirect(url_for(".sources", sources_name=search_sources))
-
-    return render_template("index.html", title=title, top=top_headlines)
-
-@main.route("/search/<news_name>")
-def search(news_name):
-    '''
-    View function to display the search results
-    '''
-    news_name_list = news_name.split(" ")
-    news_name_format = "+".join(news_name_list)
-    searched_news = search_news(news_name_format)
-    title = f" Search results for {news_name}"
-
-    return render_template("search.html", news=searched_news)
-
-@main.route("/sources")
-def sources():
-    '''
-    View function to display sources of news
-    '''
-    source = sources_news()
-    title = f"{sources} news "
-
-    return render_template("sources.html", source=source)
-
+    news_source = get_articles(source_id, per_page)
+    title = f'{source_id} | All Articles'
+    return render_template('articles.html', title=title, name=source_id, news=news_source)

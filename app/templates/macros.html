@@ -1,36 +1,11 @@
-{% macro dispalyNewsList(news_list) %}
-<div class="container">
-    <div class="row">
-    <div class=" card-columns text-dark">
-        {% for new in news_list %}
-        <div class="card m-4 text-dark">
-            <div class=" text-center card-header">
-                <a href="{{new.source}}" class="htext" style="color:#232e4a; font-size:18px;"></a>
-            </div>
-            <div class="thumbnails"> <br>
-                <img src="{{ new.urlToImage }}" width="400" height="200"
-                    class="bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-            </div>
-            <div class="card-body">
-               
-                <h2 class="featurette-heading">
-                    {{ new.title | truncate(80)}}
-                </h2>
-                <p class="card-text"> {{ new.description | truncate(200) }} </p>
-                <!-- <a href="{{new.url}}" class="btn btn-primary card-link" target="_blank">View full story &raquo;</a> -->
-            </div>
-            <div class="card-footer">
-                <a href="{{new.url}}" class="btn btn-primary card-link" target="_blank">View full story &raquo;</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+{% macro displayNews(category) %} {% for category in category %}
+<div class="card border-primary  col-md-4 aqua-gradient text-light">
+    <div class="card-header">{{category.name}}</div>
+    <div class="card-body text-light">
+        <p class="card-text">{{category.description|truncate(150)}}
+            <br>
+            <a href="/articles/{{category.id}}&40"><button type="button" class="btn btn-primary btn-sm">Read Articles</button></a></p>
     </div>
 </div>
-<br>
-<br>
-<br>
-<footer class="footer">
-    <p style="text-align: center;">© 2020 News Updates, Inc</p>
-</footer>
-{% endmacro %}
+
+{% endfor %} {% endmacro %}

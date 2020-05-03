@@ -1,23 +1,21 @@
-
 from app import create_app
 from flask_script import Manager, Server
 
-# Creating app instance
-app = create_app("development")
-
+# create app instance
+app = create_app('production')
 manager = Manager(app)
-FLASK_RUN_PORT=8000
-manager.add_command("server", Server)
+manager.add_command('server', Server)
 
-#unittest in manager instance
+
 @manager.command
 def test():
     '''
     Runs the unittest
     '''
     import unittest
-    tests = unittest.TestLoader().discover('tests')
+    tests = unittest.TestLoader().discover('test')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     manager.run()

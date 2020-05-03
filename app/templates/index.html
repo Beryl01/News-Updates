@@ -1,17 +1,67 @@
-{% extends 'base.html' %}
-{% import 'macros.html' as macro %}
-<!-- Content Block-->
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+<!-- Content block -->
 {% block content %}
-<div class="container">
-    <form>
-        <input type="text" name="news_query" placeholder="Search for news" class="form-control">
-        <input type="submit" value="Submit" class="btn btn-default">
-    </form>
-</div>
-<div class="container">
-    <h1 class="text-center"> JUST FOR YOU </h1>
-    <h3 class="text-center"> THE BEST OF EVERYTHING YOU FOLLOW </h3>
+<div class="container-fluid">
     <hr>
-    {{ macro.dispalyNewsList(top) }}
+    <!-- general news -->
+    <details class="list-group-item aqua-gradient">
+        <summary> General news</summary>
+        <div class="row">
+            {{ macro.displayNews(General)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item aqua-gradient">
+        <!---Business news-->
+        <summary> Business news</summary>
+        <hr>
+        <div class="row">
+            {{ macro.displayNews(Business)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item aqua-gradient">
+        <!--Entertainment news-->
+        <summary> Entertainment news</summary>
+        <div class="row">
+            {{ macro.displayNews(Entertainment)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item aqua-gradient">
+        <!---sports news-->
+        <summary> Sports news</summary>
+        <div class="row">
+            {{ macro.displayNews(Sports)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item aqua-gradient">
+        <!---Technology news--->
+        <summary> Technology news</summary>
+        <div class="row">
+            {{ macro.displayNews(Technology)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item aqua-gradient">
+        <!--Science news-->
+        <summary> Science news</summary>
+        <div class="row">
+            {{ macro.displayNews(Science)}}
+        </div>
+    </details>
+    <hr>
+    <details class="list-group-item aqua-gradient">
+        <!---Health news--->
+        <summary> Health news</summary>
+        <div class="row">
+            {{ macro.displayNews(Health)}}
+        </div>
+    </details>
+    <hr>
 </div>
-{% endblock %}
+{% endblock%}
