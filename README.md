@@ -16,7 +16,7 @@ As a user I would like to:
 This web application is built using Python framework known as Flask. The app displays information about news from most popular sources, top headlines in the World, categorical and also a user can search for any topic he/she feels like.
 
 ## Known Bugs
-Still not showing News Sources
+None so far
 
 ## Technologies Used
 * Python
