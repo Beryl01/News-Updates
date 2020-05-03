@@ -1,3 +1,6 @@
+body{
+    background-color: aliceblue;
+}
 #jumbo{
-    background-color: #1b6d85;
+    background-color: linear-gradient(rgba(47, 23, 15, .65), rgba(47, 23, 15, .65));
 }
