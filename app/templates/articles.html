@@ -10,14 +10,14 @@
     <div class="row">
         {% for article in news %}
         <div class="col-sm-3" style="margin-bottom: 5px">
-            <div class="card elegant-color  text-center">
+            <div class="card text-center">
                 <div class="img-fluid" style="height: 200px">
                     <a href="{{article.url}}" target="_blank">
                         <img class="thumbnail img-el img-fluid" src="{{article.urlToImage}}" alt="IMAGE LOADING...">
                     </a>
                 </div>
                 <div class="card-body">
-                    <div class="card-text text-light text-monospace">
+                    <div class="card-text text-light">
                         <h4 class="text-bold text-truncate"> {{article.title}} </h4>
                         <p class="text-truncate">{{article.description}}...</p>
                         <p class="text-truncate">Posted by: <span
